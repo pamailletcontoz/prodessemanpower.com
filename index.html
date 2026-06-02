@@ -57,6 +57,8 @@
   /* SECTION */
   section{padding:4.5rem 2rem}
   .container{max-width:1000px;margin:0 auto}
+  .container>*+*{margin-top:0}
+  section .container>div{width:100%}
   .section-label{font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--copper);margin-bottom:0.5rem;font-family:'Inter',sans-serif}
   h2{font-size:clamp(1.6rem,3vw,2.3rem);font-weight:700;color:var(--dark);margin-bottom:1rem;line-height:1.15;font-family:'Playfair Display',serif}
   .subtitle{font-size:0.95rem;color:var(--muted);max-width:560px;margin-bottom:2.5rem;font-family:'Inter',sans-serif}
@@ -96,8 +98,19 @@
   .country-pill{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:0.6rem 1rem;font-size:0.85rem;font-weight:600;color:var(--dark);display:flex;align-items:center;gap:0.5rem;font-family:'Inter',sans-serif}
   .country-flag{font-size:1.1rem}
 
-  /* ABOUT */
-  .about-inner{display:grid;grid-template-columns:1fr;gap:2rem}
+  /* RUSSIA TRANSPARENCY GRID */
+  .russia-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;width:100%}
+  .russia-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem}
+  .russia-card.positive{border-left:4px solid #2ecc71}
+  .russia-card.negative{border-left:4px solid #e74c3c}
+  .russia-card .icon{font-size:1.3rem;margin-bottom:0.75rem}
+  .russia-card h3{font-family:'Georgia',serif;font-size:1rem;color:var(--white);margin-bottom:0.5rem}
+  .russia-card p{font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7}
+  .russia-notice{margin-top:1.25rem;padding:1.25rem 1.5rem;border-radius:10px;max-width:100%}
+  .russia-notice.copper{background:rgba(184,115,51,0.15);border:1px solid var(--copper)}
+  .russia-notice.steel{background:rgba(30,58,95,0.5);border:1px solid rgba(255,255,255,0.1)}
+  .russia-notice p{font-size:0.88rem;color:rgba(255,255,255,0.85);line-height:1.8}
+  .about-inner{display:grid;grid-template-columns:1fr;gap:1rem}
   .about-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
   .about-stat{background:var(--off);border-radius:10px;padding:1rem 1.2rem;border:1px solid var(--border)}
   .about-stat .num{font-size:1.8rem;font-weight:800;color:var(--copper);font-family:'Playfair Display',serif}
@@ -288,33 +301,33 @@
     <div class="section-label" style="color:var(--copper)">Transparency</div>
     <h2 style="color:var(--white);margin-bottom:1rem">A Note on Our Russia Placements</h2>
     <p style="font-size:0.95rem;color:rgba(255,255,255,0.7);max-width:700px;margin-bottom:2rem">We understand that Russia placements raise legitimate questions. We want to be completely transparent about what we do — and what we absolutely do not do.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem">
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;border-left:4px solid #2ecc71">
-        <div style="font-size:1.3rem;margin-bottom:0.75rem">✅</div>
-        <h3 style="font-family:'Georgia',serif;font-size:1rem;color:var(--white);margin-bottom:0.5rem">Civil & Commercial Only</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7">All our Russia placements are strictly within the civilian corridor — construction, agriculture, infrastructure, and industrial projects. Legitimate work, legitimate employers, legitimate contracts.</p>
+    <div class="russia-grid">
+      <div class="russia-card positive">
+        <div class="icon">✅</div>
+        <h3>Civil & Commercial Only</h3>
+        <p>All our Russia placements are strictly within the civilian corridor — construction, agriculture, infrastructure, and industrial projects. Legitimate work, legitimate employers, legitimate contracts.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;border-left:4px solid #e74c3c">
-        <div style="font-size:1.3rem;margin-bottom:0.75rem">🚫</div>
-        <h3 style="font-family:'Georgia',serif;font-size:1rem;color:var(--white);margin-bottom:0.5rem">No Military. No Frontline. Ever.</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7">We have zero involvement with the military, defence, or any security-related industry. We do not place workers in conflict zones, frontline regions, or anywhere near active military operations.</p>
+      <div class="russia-card negative">
+        <div class="icon">🚫</div>
+        <h3>No Military. No Frontline. Ever.</h3>
+        <p>We have zero involvement with the military, defence, or any security-related industry. We do not place workers in conflict zones, frontline regions, or anywhere near active military operations.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;border-left:4px solid #e74c3c">
-        <div style="font-size:1.3rem;margin-bottom:0.75rem">🚫</div>
-        <h3 style="font-family:'Georgia',serif;font-size:1rem;color:var(--white);margin-bottom:0.5rem">No Defence Industry</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7">We do not place workers in weapons manufacturing, drone factories, munitions, or any defence-related facility. If it is connected to the military-industrial complex in any way, we do not touch it.</p>
+      <div class="russia-card negative">
+        <div class="icon">🚫</div>
+        <h3>No Defence Industry</h3>
+        <p>We do not place workers in weapons manufacturing, drone factories, munitions, or any defence-related facility. If it is connected to the military-industrial complex in any way, we do not touch it.</p>
       </div>
-      <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1.5rem;border-left:4px solid #2ecc71">
-        <div style="font-size:1.3rem;margin-bottom:0.75rem">✅</div>
-        <h3 style="font-family:'Georgia',serif;font-size:1rem;color:var(--white);margin-bottom:0.5rem">Your Safety is Non-Negotiable</h3>
-        <p style="font-size:0.85rem;color:rgba(255,255,255,0.6);line-height:1.7">Every placement is vetted for worker safety and legal compliance. You go to work, earn well, and come home. That is our only mandate. Your family's peace of mind matters to us as much as it does to you.</p>
+      <div class="russia-card positive">
+        <div class="icon">✅</div>
+        <h3>Your Safety is Non-Negotiable</h3>
+        <p>Every placement is vetted for worker safety and legal compliance. You go to work, earn well, and come home. That is our only mandate. Your family's peace of mind matters to us as much as it does to you.</p>
       </div>
     </div>
-    <div style="margin-top:2rem;padding:1.25rem 1.5rem;background:rgba(184,115,51,0.15);border:1px solid var(--copper);border-radius:10px;max-width:700px">
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.85);line-height:1.8"><strong style="color:var(--copper)">Our commitment:</strong> Prodesse Manpower operates with the same ethical standards that have defined Prodesse Health for years. We will never compromise the safety, dignity, or integrity of any worker we represent — in Russia, the GCC, or anywhere else in the world.</p>
+    <div class="russia-notice copper">
+      <p><strong style="color:var(--copper)">Our commitment:</strong> Prodesse Manpower operates with the same ethical standards that have defined Prodesse Health for years. We will never compromise the safety, dignity, or integrity of any worker we represent — in Russia, the GCC, or anywhere else in the world.</p>
     </div>
-    <div style="margin-top:1.25rem;padding:1.25rem 1.5rem;background:rgba(30,58,95,0.5);border:1px solid rgba(255,255,255,0.1);border-radius:10px;max-width:700px">
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.85);line-height:1.8"><strong style="color:var(--white)">Our clients hold the same values.</strong> Every employer we work with is carefully vetted to ensure they share our ethical standards. We only partner with civilian businesses that are wholly unconnected to the war industry, the defence sector, or any industry that directly or indirectly supports it. If a client does not meet that standard, we do not work with them — full stop.</p>
+    <div class="russia-notice steel">
+      <p><strong style="color:var(--white)">Our clients hold the same values.</strong> Every employer we work with is carefully vetted to ensure they share our ethical standards. We only partner with civilian businesses that are wholly unconnected to the war industry, the defence sector, or any industry that directly or indirectly supports it. If a client does not meet that standard, we do not work with them — full stop.</p>
     </div>
   </div>
 </section>
@@ -355,7 +368,7 @@
           <p style="color:var(--muted);font-size:0.93rem;margin-bottom:1rem">Prodesse Manpower is the industrial and labour division of the Prodesse Group, founded on the same values of integrity, compliance, and care that built Prodesse Health into a trusted healthcare staffing name.</p>
           <p style="color:var(--muted);font-size:0.93rem;margin-bottom:1rem">We exist to unlock the enormous, underutilised potential of Africa's workforce — connecting skilled, motivated people with world-class opportunities across the Middle and Far East.</p>
           <p style="color:var(--muted);font-size:0.93rem">We are not a job board. We are your recruitment partner, from first contact to first day on the job.</p>
-          <a href="https://prodesse.co.za" class="prodesse-link" style="margin-top:1rem;display:inline-flex">Visit Prodesse Health →</a>
+          <a href="https://prodessehealth.com/" class="prodesse-link" style="margin-top:1rem;display:inline-flex" target="_blank">Visit Prodesse Health →</a>
         </div>
       </div>
     </div>
@@ -614,7 +627,7 @@
 <footer>
   <div class="footer-logo">Prodesse <span>Manpower</span></div>
   <p>A division of the Prodesse Group &nbsp;·&nbsp; Cape Town, South Africa</p>
-  <p style="margin-top:0.5rem">info@prodessemanpower.com &nbsp;·&nbsp; <a href="https://prodesse.co.za" style="color:var(--copper)">prodesse.co.za</a></p>
+  <p style="margin-top:0.5rem">info@prodessemanpower.com</p>
   <p style="margin-top:1rem;font-size:0.72rem;opacity:0.45">© 2026 Prodesse Manpower. All rights reserved.</p>
 </footer>
 
